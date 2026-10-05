@@ -74,36 +74,52 @@ System Prompt + Documents
 Groq LLM
      ↓
 Research Brief
-     ↓
+     ↓ 
 output.md
 
 The agent uses only the documents provided in research_pack/.
 
 
-Output
+## Output
+
 The generated brief contains:
-- Snapshot
-- Bull case
-- Bear case
-- Open questions
-- Sources
-Factual claims are supported using document citations such as:
-The order book stood at ₹3,900 crore. [DOC-3]
+
+- **Snapshot**
+- **Bull Case**
+- **Bear Case**
+- **Open Questions**
+- **Sources**
+
+Factual claims are supported using document citations, such as:
+
+> The order book stood at ₹3,900 crore. [DOC-3]
 
 Conflicting information is reported instead of being silently resolved.
-Testing
-The agent was tested three times with improvements to the prompt.
-- Run 1: Basic research brief generation.
-- Run 2: Improved citation and conflict handling.
-- Run 3: Added a final quality checklist to improve completeness.
-The final output is available in output.md.
-Design Decision
-The agent follows a source-first approach.
+
+## Testing
+
+The agent was tested three times, with improvements made to the prompt after each run:
+
+- **Run 1:** Basic research brief generation.
+- **Run 2:** Improved citation and conflict handling.
+- **Run 3:** Added a final quality checklist to improve completeness.
+
+The final output is available in `output.md`.
+
+## Design Decision
+
+The agent follows a **source-first approach**.
+
 It uses the provided research documents as the only source of information and does not use outside knowledge for the SRVCABLE test case.
-When sources contain conflicting information, the agent reports the conflict under Open questions.
-Limitations
+
+When sources contain conflicting information, the agent reports the conflict under **Open Questions** instead of choosing one value without explanation.
+
+## Limitations
+
 - The current version is focused on the provided SRVCABLE research pack.
 - Live market and NSE data are not included.
-Repository
-GitHub:
-https://github.com/Zafilkhan/Super-Investing-AI-Innovator-Part-B
+
+## Repository
+
+**GitHub:**  
+https://github.com/Zafilkhan/Super-Investing-AI-Innovator-Part-B 
